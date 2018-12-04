@@ -1,10 +1,10 @@
 import { Provider } from 'react-redux';
-import GLobalState from './reducers';
+import GlobalState from './reducers';
 import { createStore } from 'redux';
 import { questions } from '../assets/mock-data';
 
 import React from 'react';
-import App from '../App';
+import App from '../components/App';
 
 export default class ReduxProvider extends React.Component {
 	constructor(props) {
@@ -31,6 +31,6 @@ export default class ReduxProvider extends React.Component {
 	}
 
 	configureStore() {
-		return createStore(GLobalState, this.initialState);
+		return createStore(GlobalState, this.initialState);
 	}
 }

@@ -8,11 +8,11 @@ export function questionAnswer(index, answer) {
 }
 
 export function changeQuestion(index) {
-
+	return {type: CHANGE_QUESTION, payload: {index}};
 }
 
 export function submit(questions) {
-
+	return {type: SUBMIT, payload: {questions}}
 }
 
 export function initQuestions(questions) {
