@@ -17,7 +17,7 @@ export default class Actionbar extends React.Component {
 			<div>
 				<Button name="Anterior" onClick={this.onClick} isDisabled={this.props.currentQuestion === 0}/>
 				<Button name="Siguiente" onClick={this.onClick} isDisabled={this.props.currentQuestion === 9}/>
-				<Button name="Submit" onClick={this.onClick}/> 
+				<Button name="Submit" onClick={this.onClick} isDisabled={this.props.isFinished}/> 
 			</div>
 			
 		);

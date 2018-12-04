@@ -22,6 +22,7 @@ class App extends Component {
           onQuestionAnswer={(answer)=>{ this.props.dispatch(questionAnswer(this.props.currentQuestion, answer))}}
           onClick={this.onClick}
           currentQuestion={this.props.currentQuestion}
+          isFinished={this.props.finished}
         />
         <h1>Score: {this.props.score}</h1>
         <h1>Finished: {this.props.finished.toString()}</h1>
