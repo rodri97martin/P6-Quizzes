@@ -12,9 +12,9 @@ export function changeQuestion(index) {
 }
 
 export function submit(questions) {
-	return {type: SUBMIT, payload: {questions}}
+	return {type: SUBMIT, payload: {questions}};
 }
 
 export function initQuestions(questions) {
-
+	return {type: INIT_QUESTIONS, payload: {questions}};
 }
