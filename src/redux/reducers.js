@@ -3,6 +3,9 @@ import { QUESTION_ANSWER } from './actions';
 import { CHANGE_QUESTION } from './actions';
 import { SUBMIT } from './actions';
 import { INIT_QUESTIONS } from './actions';
+import { STOP_TIMER } from './actions';
+import { START_TIMER } from './actions';
+import { CHANGE_TIME } from './actions';
 
 function score(state = 0, action = {}) {
 	switch(action.type) {
@@ -64,8 +67,15 @@ function questions(state = [], action = {}) {
 	}
 }
 
-function timer(state = {minutes: 2, seconds: 0, running: false}, action = {}) {
+function timer(state = {}, action = {}) {
 	switch(action.type) {
+		case CHANGE_TIME:
+			var newState = tick(state);
+			return newState;
+		case START_TIMER:
+			return { minutes: 2, seconds: 0, running: true };
+		case STOP_TIMER:
+			return { minutes: 2, seconds: 0, running: false };
 		default:
 			return state;
 	}
@@ -82,3 +92,20 @@ const GlobalState = (combineReducers({
 }));
 
 export default GlobalState;
+
+function tick(state) {
+
+	var newState;
+
+	if (state.seconds === 0) {
+
+		 newState = {minutes: state.minutes -1 , seconds: 59, running: state.running};
+	} else {
+
+		 newState = {minutes: state.minutes  , seconds: state.seconds - 1, running: state.running};
+	}
+
+	return newState;
+}
+
+

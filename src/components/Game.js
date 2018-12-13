@@ -30,6 +30,7 @@ export default class Game extends React.Component {
 					<Content question={this.props.question} 
 						onQuestionAnswer={this.props.onQuestionAnswer} 
 						timer={this.props.timer}
+						submitTime={this.props.submitTime}
 					/>
 					<Actionbar onClick={this.onClick} currentQuestion={this.props.currentQuestion} isFinished={this.props.isFinished}/> 
 				</div>
