@@ -12,7 +12,7 @@ export default class Button extends React.Component {
 
 	render() {
 		return (
-			<button onClick={this.onClick} disabled={this.props.isDisabled}> {this.props.name}</button>
+			<button id="boton" onClick={this.onClick} disabled={this.props.isDisabled}> {this.props.name}</button>
 		);
 	}
 }

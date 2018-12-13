@@ -1,7 +1,7 @@
 import React from 'react';
 import Content from './Content';
 import Actionbar from './Actionbar';
-import gameover from '../assets/gameOver.jpg';
+import GameOver from './GameOver';
 
 
 export default class Game extends React.Component {
@@ -19,14 +19,13 @@ export default class Game extends React.Component {
 		if (this.props.isFinished === true) {
 			return (
 				<div>
-          			<img height="300px" src={gameover} />
-          			<h1>Score: {this.props.score}</h1>
+					<GameOver score={this.props.score}/>
           			<Actionbar onClick={this.onClick} currentQuestion={this.props.currentQuestion} isFinished={this.props.isFinished}/>
         		</div>
         	);
 		} else {
 			return (
-				<div>
+				<div id="gameDiv">
 					<Content question={this.props.question} 
 						onQuestionAnswer={this.props.onQuestionAnswer} 
 						timer={this.props.timer}

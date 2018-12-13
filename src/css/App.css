@@ -1,0 +1,47 @@
+#bigTitle {
+  text-align: center;
+}
+
+#gameDiv {
+	margin-top: 80px;
+	margin-bottom: 0px;
+}
+
+#actionBar {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	margin-top: 60px;
+}
+
+.content {
+	height: 254px;
+	display:grid;
+	grid-template-columns: 640px 640px;
+}
+
+#gameOver {
+	display: grid;
+	grid-template-columns: 640px 640px;
+}
+
+.quizImage {
+	max-height: 250px;
+	min-height: 200px;
+	max-width: 635px;
+	display: block;
+	margin: auto;
+}
+
+#boton {
+	text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+}
+
+
+
