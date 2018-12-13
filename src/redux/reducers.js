@@ -64,13 +64,20 @@ function questions(state = [], action = {}) {
 	}
 }
 
+function timer(state = {minutes: 2, seconds: 0, running: false}, action = {}) {
+	switch(action.type) {
+		default:
+			return state;
+	}
+}
 
 const GlobalState = (combineReducers({
 
 	score,
 	finished,
 	currentQuestion,
-	questions
+	questions, 
+	timer
 
 }));
 

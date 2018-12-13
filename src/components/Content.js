@@ -2,6 +2,7 @@ import React from 'react';
 import Question from './Question';
 import Answer from './Answer';
 import Pistas from './Pistas';
+import Timer from './Timer';
 
 
 export default class Content extends React.Component {
@@ -13,6 +14,7 @@ export default class Content extends React.Component {
 				<Question question={this.props.question}/>
 				<Answer userAnswer={this.props.question.userAnswer || ''} onQuestionAnswer={this.props.onQuestionAnswer}/>
 				<Pistas tips={this.props.question.tips}/>
+				<Timer timer={this.props.timer}/>
 			</div>
 		);
 	}

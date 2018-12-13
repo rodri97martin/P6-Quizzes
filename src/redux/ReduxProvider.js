@@ -13,7 +13,12 @@ export default class ReduxProvider extends React.Component {
 			score: 0,
 			finished: false,
 			currentQuestion: 0,
-			questions: [ ...questions ]
+			questions: [ ...questions ],
+			timer: {
+				minutes: 2,
+				seconds: 0,
+				running: false
+			}
 		};
 		this.store = this.configureStore();
 	}

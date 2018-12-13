@@ -12,18 +12,20 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
-    this.downloadQuestions = this.downloadQuestions.bind(this);
-    this.downloadQuestions();
+    this.download = this.download.bind(this);
   }
 
-  downloadQuestions() {
+  download() {
     fetch('https://quiz2019.herokuapp.com/api/quizzes/random10wa?token=a56673ed15ebc70ba6f2')
       .then(res => res.json())
       .then((questions) => {
         this.props.dispatch(initQuestions(questions));
       })
       .catch(err => console.error(err));
+  }
 
+  componentDidMount() {
+    this.download();
   }
 
   render() {
@@ -36,6 +38,7 @@ class App extends Component {
           currentQuestion={this.props.currentQuestion}
           isFinished={this.props.finished}
           score={this.props.score}
+          timer={this.props.timer}
         />
       </div>
     );
@@ -46,7 +49,7 @@ class App extends Component {
     if (name === "Submit") {
       this.props.dispatch(submit(this.props.questions))
     } else if (name === "Play Again"){
-      this.downloadQuestions();
+      this.download();
     } else {
       this.props.dispatch(changeQuestion(name));
     }
